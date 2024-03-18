@@ -1,0 +1,35 @@
+{
+  "name": "@noodl/cloudservice",
+  "version": "0.3.0",
+  "description": "Low-code for when experience matter",
+  "author": "Noodl <info@noodl.net>",
+  "homepage": "https://noodl.net",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "commonjs",
+  "scripts": {
+    "build:clean": "ts-node ./scripts/clean.ts",
+    "build:ts": "tsc",
+    "build:static": "ts-node ./scripts/copyStaticAssets.ts",
+    "build": "npm run build:clean && npm run build:ts && npm run build:static"
+  },
+  "dependencies": {
+    "@noodl/cloud-runtime": "^0.6.3",
+    "@noodl/cloudservice": "^0.2.5",
+    "dotenv": "^16.4.5",
+    "isolated-vm": "^4.4.2",
+    "node-fetch": "2.6.7",
+    "parse-server": "^4.10.4",
+    "parse-server-gcs-adapter": "git+https://github.com/noodlapp/noodl-parse-server-gcs-adapter.git",
+    "winston-mongodb": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.2.2"
+  }
+}
